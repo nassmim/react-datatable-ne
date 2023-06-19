@@ -2,7 +2,7 @@ import { Arrow } from '../style'
 import { TableColumn } from '../../types/types'
 import { useState } from 'react'
 
-const PaginateLeftArrow = require("../../assets/pagination-left-arrow.svg") as string;
+import PaginateLeftArrow from '../../assets/pagination-left-arrow.svg'
 
 const TableHead = ({
   columns,
