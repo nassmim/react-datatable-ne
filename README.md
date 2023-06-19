@@ -50,9 +50,13 @@ The library has some dependencies that will get automatically downloaded and lis
 
 Firstly, the project uses Node packages and uses `pnpm`, so the installation of Node.js in your IDE is required
 > [Install Node.js](https://nodejs.org/en/)
-
-
-Then, use any package manager to install our package. With npm, the command line to run is: <br/>
+<br/>
+If you have not yet `pnpm` you can run the following command line: <br/>
+`npm install --global pnpm`  <br/>
+*⚠ Other options are available to install it, so feel free to use the one you are more comfortable with. *⚠
+ <br/>
+  <br/>
+Then, use any package manager to install our package. With `npm`, the command line to run is: <br/>
 `npm install --save react-datatable-ne` <br/>
 Add the necessary flag arguments like `--save-dev`depending on the environment you want to use the library.
 Most likely, you will need it for production as well so use `--save`
@@ -124,6 +128,12 @@ If you want to work and propose improvements:
 <li>Clone it locally using <code>git clone</code></li>
 </ol>
 
+The project uses Node packages. So the installation of Node.js in your IDE is required
+> [Install Node.js](https://nodejs.org/en/)
+For Node packages manager, yarn is being used. To install it, run the command line:
+`npm install --global yarn`
+<br/>
+<br/>
 
 ## License
 
