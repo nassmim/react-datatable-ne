@@ -110,7 +110,7 @@ const App = ({
       const dataSlice = [numberOfEntries * (page - 1), numberOfEntries * page]
       return dataSlice
     },
-    [pageNumber]
+    []
   )
 
   const handleEntriesNumberChange = (newValue: unknown) => {
