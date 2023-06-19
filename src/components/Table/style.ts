@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const EmployeesTableStyled = styled.table`
+export const TableStyled = styled.table`
   width: 100%;
   background-color: #fff;
 

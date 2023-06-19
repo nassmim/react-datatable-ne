@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-export const EmployeesSection = styled.section``
-
 export const TableDisplayOptions = styled.div`
   display: flex;
   justify-content: space-between;
@@ -76,17 +74,14 @@ export const TablePagination = styled.div`
 export const Arrow = styled.img.attrs((props) => ({
   src: props.src,
   alt: props.alt,
-  className: props.className,
 }))`
   ${(props) => {
-    if (props.style) {
       return `
-        width: ${props.width};
+        width: ${props.style?.width};
         cursor: ${props.style?.cursor};
         transform: rotate(${props.style?.rotate});
         opacity: ${props.style?.opacity};
       `
-    }
   }}
 `
 
