@@ -52,21 +52,21 @@ const App = ({
   columns: TableColumn[]
   initialSort?: { column: keyof DataRow; order: 'asc' | 'desc' }
   sortArrowsProps?: { [key: string]: any }
-  entriesNumberOptionsProps: { [key: string]: any }
+  entriesNumberOptionsProps?: { [key: string]: any }
   showEntriesNumberText?: string
   entriesUnits?: string
   isSearchable?: boolean
   fieldsSearched?: (keyof DataRow)[]
-  searchInputsProps: { [key: string]: any }
+  searchInputsProps?: { [key: string]: any }
   searchOnFullWord?: boolean
   searchLabel?: string
   isPaginable?: boolean
   pagesNumberVisible?: boolean
   paginateArrowProps?: { [key: string]: any }
-  textForDataNull: string
-  textForDataFilteredNull: string
+  textForDataNull?: string
+  textForDataFilteredNull?: string
 }) => {
-  const entriesNumberOptions = entriesNumberOptionsProps.options
+  const entriesNumberOptions = entriesNumberOptionsProps?.options
 
   if (isPaginable && !entriesNumberOptions.length) {
     alert(
