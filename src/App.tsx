@@ -19,7 +19,7 @@ import { TableColumn, OptionValue, DataRow, DataRows } from './types/types'
 import useSortTable from './components/Table/hooks/useSortTable'
 import useSearch from './hooks/useSearch'
 
-import ArrowSVG from '../../assets/pagination-left-arrow.svg'
+import ArrowSVG from './assets/pagination-left-arrow.svg'
 
 
 /**
