@@ -1,7 +1,7 @@
 {
   "include": [
     "src",
-    "custom.d.ts"
+    "src/types/*"
   ],
   "exclude": [
     "dist",

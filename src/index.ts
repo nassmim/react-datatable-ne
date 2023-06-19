@@ -1,3 +1,5 @@
 import DisplayTable from './App'
+import { OptionValue, TableColumn, DataRow, DataRows  } from './types/types'
 
-export { DisplayTable }
+export { OptionValue, TableColumn, DataRow, DataRows }
+export default DisplayTable

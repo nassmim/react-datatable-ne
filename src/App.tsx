@@ -14,11 +14,12 @@ import {
 
 import Select from 'react-select'
 
-import EmployeesTable from './components/Table/Table'
-import { TableColumn } from './types/types'
+import Table from './components/Table/Table'
+import { TableColumn, OptionValue, DataRow, DataRows } from './types/types'
 import useSortTable from './components/Table/hooks/useSortTable'
 import useSearch from './hooks/useSearch'
-import { OptionValue, DataRow, DataRows } from './types/types'
+
+import ArrowSVG from '../../assets/pagination-left-arrow.svg'
 
 
 /**
@@ -32,7 +33,8 @@ const App = ({
   data, // data contained in the table
   columns, // headers of the table
   initialSort, // is data sorted in a specific way at page load?
-  entriesNumberOptionsProps, // the select options to set the table size
+  sortArrowsProps, // any property natively used by HTML img element
+  entriesNumberOptionsProps, // the select options props to set the table size
   showEntriesNumberText = 'Show', // the label for the table size select dropdown
   entriesUnits = 'entries', // the table size units label
   isSearchable = false, // can the user make a research to filter data?
@@ -49,11 +51,12 @@ const App = ({
   data: DataRows
   columns: TableColumn[]
   initialSort?: { column: keyof DataRow; order: 'asc' | 'desc' }
+  sortArrowsProps?: { [key: string]: any }
   entriesNumberOptionsProps: { [key: string]: any }
   showEntriesNumberText?: string
   entriesUnits?: string
   isSearchable?: boolean
-  fieldsSearched?: [keyof DataRow][]
+  fieldsSearched?: (keyof DataRow)[]
   searchInputsProps: { [key: string]: any }
   searchOnFullWord?: boolean
   searchLabel?: string
@@ -281,7 +284,8 @@ const App = ({
           </p>
           <div className="arrows">
             <Arrow
-              {...paginateArrowProps?.previous?.attributes}
+              alt= {paginateArrowProps?.previous?.alt || 'Previous page'}
+              src= {paginateArrowProps?.previous?.src || ArrowSVG}
               style={{
                 ...paginateArrowProps?.previous?.style,
                 cursor: pagePreviousIsClickable ? 'pointer' : 'cursor',
@@ -308,7 +312,8 @@ const App = ({
                 </p>
               ))}
             <Arrow
-              {...paginateArrowProps?.next?.attributes}
+              alt= {paginateArrowProps?.next?.alt || 'Next page'}
+              src= {paginateArrowProps?.next?.src || ArrowSVG}
               style={{
                 ...paginateArrowProps?.next?.style,
                 cursor: pageNextIsClickable ? 'pointer' : 'cursor',
@@ -322,10 +327,11 @@ const App = ({
         </TablePagination>
       )}
       <div>
-        <EmployeesTable
+        <Table
           data={tableDataSliced}
           columns={columns}
           sortData={sortData}
+          sortArrowsProps={sortArrowsProps}
         />
         {!tableData.length && (
           <NoData>
