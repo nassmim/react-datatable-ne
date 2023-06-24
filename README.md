@@ -119,6 +119,46 @@ We have not precised the type for each of these props. However, our package is t
 <br/>
 <br/>
 
+#### Types
+The packages exposes 4 types that you can import like this:
+```js
+import { TableColumn, OptionValue, DataRow, DataRows } from 'react-datatable-ne'
+```
+
+`TableColumn` represents a table header row 
+```js
+type TableColumn = {
+  label: string // Title of the column displayed to the user 
+  accessor: string // Value to access the row (acts like the it)
+  sortable: boolean // Indicates if the table can be sorted by this column or not
+}
+```
+<br/>
+
+`OptionValue` simply represents an option for a select dropdown. 
+```js
+type OptionValue = {
+  value: string // Value of the option
+  label: string // Text displayed to the user 
+}
+```
+<br/>
+
+`DataRow` represents a table body row 
+```js
+type DataRow = {
+  [key: string]: any // Key should be one of your table header title
+}
+```
+<br/>
+
+`DataRows` is self-explanatory, it corresponds to a table body
+```js
+type DataRows = DataRow[]
+```
+<br/>
+<br/>
+
 ## 5. Contribution
 Although as it stands, this library does the job, offering enough flexibility and simplicity to the developpers, any participation on this project is more than welcome.
 
